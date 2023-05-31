@@ -86,9 +86,7 @@ class Generator(tf.keras.Model):
         skips = []
         
         for down in self.down_stack:
-            
             x = down(x)
-            
             skips.append(x)
 
         skips = reversed(skips[:-1])
@@ -559,10 +557,10 @@ class DCGAN_v2(tf.keras.Model):
 
                 if step != 0:
                     print(f'Time taken for 200 steps: {time.time()-start:.2f} sec\n')
-
+                    start = time.time()
                
                 print(f"Step: {step}")
-            start = time.time()
+            
             train_step(input_image, target, step)
 
             # Training step

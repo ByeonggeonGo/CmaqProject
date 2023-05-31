@@ -53,3 +53,16 @@ class CBR2d(tf.keras.layers.Layer):
         cnn_feat_x = self.cnn_layer(inputs)
         batched_feat = self.batch_layer(cnn_feat_x)
         return batched_feat
+    
+
+class LassoRegression(tf.keras.layers.Layer):
+    def __init__(self):
+        super(LassoRegression, self).__init__()
+        
+        self.l1_regularizer = tf.keras.regularizers.L1(0.01)
+        self.layer = tf.keras.layers.Dense(1, kernel_regularizer=self.l1_regularizer)
+
+    def call(self, inputs):
+        output = self.layer(inputs)
+        return output
+    
