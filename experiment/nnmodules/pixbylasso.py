@@ -55,7 +55,7 @@ class LassomodPix_v2(tf.keras.Model):
         for pix_index in self._indexed_grid_point.index.tolist():
             
             self.grid_layers.append(tf.keras.layers.Dense(1, kernel_regularizer=tf.keras.regularizers.L1(0.01)))
-            self.optimizers.append(tf.keras.optimizers.Adam(0.001))
+            # self.optimizers.append(tf.keras.optimizers.Adam(0.001))
     def call(self, inputs):
         pred_base = np.zeros([len(inputs),82,67,1])
         # for i, pix_index in enumerate(self._indexed_grid_point.loc[~self._indexed_grid_point.CTP_KOR_NM.isna()].index.tolist()):
@@ -63,25 +63,4 @@ class LassomodPix_v2(tf.keras.Model):
             x, y = pix_index%82,pix_index//82
             pred = self.grid_layers[i](inputs)
             pred_base[:,x,y,:] = pred
-        return pred_base
-    
-    def predict(self, ctp_kor: str, inputs):
-        pred_base = np.zeros([len(inputs),82,67,1])
-
-        if ctp_kor != '전국':
-
-            for ind in self.results_pd.loc[self.results_pd.ctp_kor_nm == ctp_kor].index.tolist():
-                ind_val = self.results_pd.loc[ind,:].values
-                pred = ind_val[10].predict(inputs)
-
-                pred_base[:,ind_val[8],ind_val[9],0] = pred
-            
-        else:
-            for ind in self.results_pd.index.tolist():
-                ind_val = self.results_pd.loc[ind,:].values
-                pred = ind_val[10].predict(inputs)
-
-                pred_base[:,ind_val[8],ind_val[9],0] = pred
-
-
-        return pred_base
+        return tf.convert_to_tensor(pred_base)

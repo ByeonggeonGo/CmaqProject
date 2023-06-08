@@ -61,7 +61,7 @@ class LassoRegression(tf.keras.layers.Layer):
         
         self.l1_regularizer = tf.keras.regularizers.L1(0.01)
         self.layer = tf.keras.layers.Dense(1, kernel_regularizer=self.l1_regularizer)
-
+        
     def call(self, inputs):
         output = self.layer(inputs)
         return output
