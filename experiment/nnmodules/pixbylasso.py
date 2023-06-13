@@ -54,7 +54,7 @@ class LassomodPix_v2(tf.keras.Model):
 
         for pix_index in self._indexed_grid_point.index.tolist():
             
-            self.grid_layers.append(tf.keras.layers.Dense(1, kernel_regularizer=tf.keras.regularizers.L1(0.01)))
+            self.grid_layers.append(tf.keras.layers.Dense(1, kernel_regularizer=tf.keras.regularizers.L1(0.001)))
             # self.optimizers.append(tf.keras.optimizers.Adam(0.001))
     def call(self, inputs):
         pred_base = np.zeros([len(inputs),82,67,1])

@@ -592,7 +592,6 @@ class Unet_v5(tf.keras.Model):
               
     def call(self, input): 
 
-       
         # x = tf.multiply(tf.keras.layers.Reshape((1,1, 119))(input), self.base_map)
         x_left = tf.multiply(tf.ones([input.shape[0],1,1,1]), self.base_map)
         x_left = self.input_resize_layer(x_left)
