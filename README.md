@@ -56,7 +56,7 @@ In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
 
 # experiments
 
-* surrogate target 1
+## surrogate target 1
 
 <br> for surrogate target 1 model, see experiment/smoke_cmaq_hourly.ipynb file.
 <br> The LSTM-CNN based model and conditional DCGAN based model(pix2pix structure) were applied in the research, and the conditional DCGAN based model demonstrated superior performance.
@@ -64,11 +64,11 @@ In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
 
 ![lstmbase](https://github.com/SlownSteadi/CmaqProject/assets/80737484/922cdf01-7c86-4c2a-83b2-b76d166e3659)
 
-lstm-cnn based model
+###lstm-cnn based model
 
 ![dcgan base](https://github.com/SlownSteadi/CmaqProject/assets/80737484/24953440-587e-430f-8133-0fcfbbd990ec)
 
-conditional dcgan based model 
+###conditional dcgan based model 
 
 <br>--pix2pix dcgan generator structure--
 <br>![hourlypix2pixgenerator](https://github.com/SlownSteadi/CmaqProject/assets/80737484/fb25af09-3aa0-44d3-b12b-f024e8446207)
@@ -77,7 +77,7 @@ conditional dcgan based model
 <br>![hourlypix2discriminator](https://github.com/SlownSteadi/CmaqProject/assets/80737484/8188d114-0a6b-4f2a-a386-2e1b208ad87a)
 
 
-* surrogate target 2
+## surrogate target 2
 
 <br> for surrogate target 2 model, see experiment/controlmatrix_cmaq_y.ipynb file.
 <br> for model code see experiment/nnmodules/unet Unet_v3, Unet_v4,Unet_v5,
@@ -108,15 +108,41 @@ conditional dcgan based model
 
 
 
-* surrogate target 3
+## surrogate target 3
 
 ![image](https://github.com/SlownSteadi/CmaqProject/assets/80737484/e540d5ae-f0e2-4363-9038-ec11df3f3a4b)
 <br> for surrogate target 3 model, see experiment/smoke_cmaq_model.ipynb file.
 <br> for model code see experiment/nnmodules/unet.py Unet_v2, experiment\treemoudules\regressiontreemodule.py GradientBoosting
-<br> for SMOKE generation example, see experiment/gan_smoke_yearly.ipynb file.
+
 
 ![image](https://github.com/SlownSteadi/CmaqProject/assets/80737484/6300c146-0a02-4d07-8480-f700e3f35b7b)
 <br> The Unet architecture was utilized as a base due to the nature of the pix2pix data. However, there are also results obtained by creating a custom tree-based boosting algorithm specifically designed for the pix2pix problem. Additionally, to facilitate model interpretation, the SHAP (Shapley additive explanation) framework was implemented, which enables the generation of contribution maps. These contribution maps provide insights into the relative importance of input features in the model's predictions through dynamic programming-based calculations.
+
+### SMOKE generation
+<br> for SMOKE generation example, see experiment/gan_smoke_yearly.ipynb file.
+<br> The generated SMOKE dataset can indeed be used as a candidate input for surrogate target 2 in the research. It can serve as a potential input material for the model aiming to predict CMAQ based on the control matrix. By utilizing the generated SMOKE dataset, the model can simulate and predict the corresponding CMAQ values, providing valuable insights into air quality modeling and analysis.
+<br> ![image](https://github.com/SlownSteadi/CmaqProject/assets/80737484/af7464d2-9592-44af-89fe-cf2fc693fd0f)
+
+### JAX/FLAX based train toop optimization
+
+<br>By optimizing the training loop using JAX/FLAX, the algorithm for training lasso regression models on each grid has been significantly accelerated, achieving a speed improvement of over 800 times. This optimization allows for much faster training of the lasso regression models on a per-grid basis. JAX/FLAX, with its efficient computation and parallelization capabilities, enables rapid model training and improves overall performance in terms of speed and efficiency.
+
+
+#### For comparison, please refer to the following source code and Jupyter notebooks:
+
+<br>Optimized version:
+
+* Source code: experiment\nnmodules\jaxmodules.py -> Jax_lasso_cmaq class
+* Jupyter notebook: experiment\controlmatrix_cmaq_lasso_jax_ver.ipynb
+
+<br>Original version:
+
+* Source code: experiment\nnmodules\pixbylasso.py -> LassomodPix_v2 class
+* Jupyter notebook: experiment\controlmatrix_cmaq_lasso.ipynb
+
+<br>Please access these files and notebooks to examine the code and further details.
+
+
 
 
 
