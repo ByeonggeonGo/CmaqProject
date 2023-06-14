@@ -63,11 +63,11 @@ In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
 <br> for model code see experiment/nnmodules/unet Lstm2dUnet class and experiment/nnmodules/gan DCGAN_v2 class
 
 <br>
-![lstmbase](https://github.com/SlownSteadi/CmaqProject/assets/80737484/922cdf01-7c86-4c2a-83b2-b76d166e3659)![image](https://github.com/SlownSteadi/CmaqProject/assets/80737484/5ffe4cc9-a1c5-4d8d-95f9-4fb12be576e0)
+![lstmbase](https://github.com/SlownSteadi/CmaqProject/assets/80737484/922cdf01-7c86-4c2a-83b2-b76d166e3659)
 lstm based model 
 
 <br>
-!![dcgan base](https://github.com/SlownSteadi/CmaqProject/assets/80737484/24953440-587e-430f-8133-0fcfbbd990ec)![image](https://github.com/SlownSteadi/CmaqProject/assets/80737484/2dbb0948-898a-4f52-9834-e0e8b9e2ff0d)
+![dcgan base](https://github.com/SlownSteadi/CmaqProject/assets/80737484/24953440-587e-430f-8133-0fcfbbd990ec)!
 conditional dcgan based model 
 
 
