@@ -58,7 +58,7 @@ In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
 
 * surrogate target 1
 
-<br> fot surrogate target 1 model, see experiment/smoke_cmaq_hourly.ipynb file.
+<br> for surrogate target 1 model, see experiment/smoke_cmaq_hourly.ipynb file.
 <br> The LSTM-CNN based model and conditional DCGAN based model were applied in the research, and the conditional DCGAN based model demonstrated superior performance.
 <br> for model code see experiment/nnmodules/unet Lstm2dUnet class and experiment/nnmodules/gan DCGAN_v2 class
 
