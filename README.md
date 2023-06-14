@@ -79,6 +79,27 @@ conditional dcgan based model
 ![Unet_v5_structure drawio](https://github.com/SlownSteadi/CmaqProject/assets/80737484/3f704c84-3dbe-4fc2-a83d-76294ca86ff9)
 <v5 model structure>
 
+<br>The trained model provides the following functionalities:
+
+<br>PM2.5 average concentration simulation based on input values: Utilizing the model, you can simulate the PM2.5 average concentration based on input values. This allows you to obtain predicted results for specific input conditions.
+
+<br>Saving predicted values and input values: The model can generate predicted PM2.5 average concentration values for the given input. These predicted values can be saved along with the corresponding input values. This enables you to store the model's predictions and input data for future analysis or visualization purposes.
+
+<br>Analysis tool integration: The Unet_v5 class model comes with an analysis tool. This tool allows you to evaluate the performance of the model, visualize simulation results, and conduct further analysis. It may include additional statistical analysis or visualization features, and can be used to perform various analyses based on different input values.
+
+<br>With these functionalities, the trained model enables simulation of PM2.5 average concentrations based on input values, saving of predicted and input values, and provides an analysis tool for further analysis.
+
+![dashboard_1](https://github.com/SlownSteadi/CmaqProject/assets/80737484/d90d5399-7d82-4a27-8c3d-64594eff2fdc)
+<analysis tool image 1>
+![dashboard_2](https://github.com/SlownSteadi/CmaqProject/assets/80737484/a23811ce-54fd-47aa-bc51-ff6e6300b9f1)
+<analysis tool image 2>
+
+<br>contribute:
+front and backend engineer: ~!@#!@#! url
+model development: url
+
+
+
 
 
 
