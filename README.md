@@ -7,6 +7,7 @@ Image source:http://bioearth.wsu.edu/cmaq_model.html
 
 # Dataset
 
+![smokecmaq](https://github.com/SlownSteadi/CmaqProject/assets/80737484/7f92388f-2881-4648-8cf4-70edb889f262)
 The dataset will be kept confidential for security reasons.
 The dataset consists of three main components: Control matrix, SMOKE model output, and CMAQ model output.
 The structure involves using the values from the control matrix as inputs for the SMOKE model, and the resulting output is then fed into the CMAQ model for air quality modeling.
