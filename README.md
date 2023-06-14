@@ -62,10 +62,12 @@ In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
 <br> The LSTM-CNN based model and conditional DCGAN based model were applied in the research, and the conditional DCGAN based model demonstrated superior performance.
 <br> for model code see experiment/nnmodules/unet Lstm2dUnet class and experiment/nnmodules/gan DCGAN_v2 class
 
-![image](https://github.com/SlownSteadi/CmaqProject/assets/80737484/73f18c23-9a91-4b5f-976d-921a7f687a35)
+![lstmbase](https://github.com/SlownSteadi/CmaqProject/assets/80737484/922cdf01-7c86-4c2a-83b2-b76d166e3659)
+
 lstm-cnn based model
 
-![image](https://github.com/SlownSteadi/CmaqProject/assets/80737484/1bb7111d-c161-4639-a7a2-bc52247843b7)
+![dcgan base](https://github.com/SlownSteadi/CmaqProject/assets/80737484/24953440-587e-430f-8133-0fcfbbd990ec)
+
 conditional dcgan based model 
 
 
