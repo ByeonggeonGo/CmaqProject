@@ -42,3 +42,12 @@ In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
 <br> The surrogate model is developed to generate year level averaged PM2.5 Concentrations. By considering different scenarios, the model can provide averaged PM2.5 concentrations that represent the air quality conditions under specific conditions or scenarios. This allows for the analysis and comparison of air quality across different scenarios without the need for extensive computations.
 
 ![flowchart1](https://github.com/SlownSteadi/CmaqProject/assets/80737484/f1d10e9e-9528-42fe-acc5-32e648c65506)
+
+* surrogate target 1
+<br> In surrogate target 1, a model is created to predict CMAQ using SMOKE data, which is composed of hourly data. The length of the entire time window is determined based on the desired prediction timeframe for PM2.5. The time lag of the input data is a hyperparameter, but it is recommended to minimize it as much as possible while achieving good prediction performance. The target value can be set by adjusting the shift according to the specific objective of the model.
+
+* surrogate target 2
+<br> In surrogate target 2, a model is created to predict CMAQ directly from the control matrix as input. Since it involves average data, the characteristics of time windows and shifts, which are typical for time-series models, are not considered. The purpose of this model is to directly predict the average values of CMAQ from the control matrix, thereby reducing the cost of SMOKE modeling. From a policy perspective, using the control matrix as input allows for the establishment of clear emission reduction goals. This approach offers the advantage of setting precise emission reduction targets when utilizing the control matrix.
+
+* surrogate target 3
+<br> In surrogate target 3, a model is created to predict the average CMAQ from the average SMOKE as input. Since it involves average data, the characteristics of time windows and shifts, which are typical for time-series models, are not considered. The purpose of this model is to reduce the cost of CMAQ by predicting the average values of CMAQ. Considering that running a one-year simulation in CMAQ takes approximately one month, utilizing average simulations can achieve significant cost savings.
