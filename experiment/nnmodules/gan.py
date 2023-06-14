@@ -587,8 +587,6 @@ class DCGAN_v2(tf.keras.Model):
                 checkpoint.save(file_prefix=checkpoint_prefix)
             
         # 마지막 에포크가 끝난 후 생성
-
-
     def call(self, input): 
         x = self.generator(input)
         return x

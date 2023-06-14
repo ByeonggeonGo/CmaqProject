@@ -498,8 +498,6 @@ class Unet_v4(tf.keras.Model):
         x = self.output_resize_layer(x)
         return x
     
-
-
 class Unet_v5(tf.keras.Model): 
     def __init__(self,base_map): 
         super(Unet_v5, self).__init__()
