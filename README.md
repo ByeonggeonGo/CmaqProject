@@ -70,6 +70,12 @@ lstm-cnn based model
 
 conditional dcgan based model 
 
+* surrogate target 2
+
+<br> for surrogate target 2 model, see experiment/controlmatrix_cmaq_y.ipynb file.
+<br> for model code see experiment/nnmodules/unet Unet_v3, Unet_v4,Unet_v5,
+<br> Among the three classes, the Unet_v5 class model was found to have the least occurrence of overfitting when comparing the training set and the test set. In addition, the Unet_v5 class model also provides an analysis tool for further analysis.
+
 
 
 
