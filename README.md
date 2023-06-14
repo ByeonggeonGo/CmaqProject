@@ -115,6 +115,9 @@ conditional dcgan based model
 <br> for model code see experiment/nnmodules/unet.py Unet_v2, experiment\treemoudules\regressiontreemodule.py GradientBoosting
 <br> for SMOKE generation example, see experiment/gan_smoke_yearly.ipynb file.
 
+![image](https://github.com/SlownSteadi/CmaqProject/assets/80737484/6300c146-0a02-4d07-8480-f700e3f35b7b)
+<br> The Unet architecture was utilized as a base due to the nature of the pix2pix data. However, there are also results obtained by creating a custom tree-based boosting algorithm specifically designed for the pix2pix problem. Additionally, to facilitate model interpretation, the SHAP (Shapley additive explanation) framework was implemented, which enables the generation of contribution maps. These contribution maps provide insights into the relative importance of input features in the model's predictions through dynamic programming-based calculations.
+
 
 
 
