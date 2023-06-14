@@ -110,9 +110,12 @@ conditional dcgan based model
 
 * surrogate target 3
 
+![image](https://github.com/SlownSteadi/CmaqProject/assets/80737484/e540d5ae-f0e2-4363-9038-ec11df3f3a4b)
 <br> for surrogate target 3 model, see experiment/smoke_cmaq_model.ipynb file.
 <br> for model code see experiment/nnmodules/unet.py Unet_v2, experiment\treemoudules\regressiontreemodule.py GradientBoosting
 <br> for SMOKE generation example, see experiment/gan_smoke_yearly.ipynb file.
+
+
 
 
 
