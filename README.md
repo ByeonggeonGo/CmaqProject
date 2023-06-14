@@ -77,7 +77,7 @@ conditional dcgan based model
 <br> Among the three classes, the Unet_v5 class model was found to have the least occurrence of overfitting when comparing the training set and the test set. In addition, the Unet_v5 class model also provides an analysis tool for further analysis.
 
 ![Unet_v5_structure drawio](https://github.com/SlownSteadi/CmaqProject/assets/80737484/3f704c84-3dbe-4fc2-a83d-76294ca86ff9)
-<v5 model structure>
+--v5 model structure flowchart--
 
 <br>The trained model provides the following functionalities:
 
