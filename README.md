@@ -5,6 +5,12 @@ In this study, we train deep learing based model for surrogate CMAQ(The Communit
 ![https://github.com/SlownSteadi/CmaqProject/issues/1#issue-1754400603](https://user-images.githubusercontent.com/80737484/245418958-276fce13-7372-4e14-a590-9a52631c081e.png)
 Image source:http://bioearth.wsu.edu/cmaq_model.html
 
+* Purpose
+
+<br> The objective of this research is to replace the computationally expensive CMAQ modeling with a deep learning-based surrogate model. 
+<br> This approach aims to reduce the computational cost and enable the utilization of air quality prediction and simulation testing. 
+<br> By using the surrogate model, which is based on deep learning, the research seeks to achieve cost reduction and facilitate various applications related to air quality prediction and simulation testing.
+
 # Dataset
 
 ![smokecmaq](https://github.com/SlownSteadi/CmaqProject/assets/80737484/7f92388f-2881-4648-8cf4-70edb889f262)
