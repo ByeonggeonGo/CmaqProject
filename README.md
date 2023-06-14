@@ -95,8 +95,9 @@ conditional dcgan based model
 <analysis tool image 2>
 
 <br>contribute:
-front and backend engineer: ~!@#!@#! url
-model development: url
+<br>UI and backend developer: ~!@#!@#! url
+<br>model development: url
+<br>GIS engineering:
 
 
 
