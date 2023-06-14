@@ -53,3 +53,12 @@ In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
 <br> In surrogate target 3, a model is created to predict the average CMAQ from the average SMOKE as input. Since it involves average data, the characteristics of time windows and shifts, which are typical for time-series models, are not considered. The purpose of this model is to reduce the cost of CMAQ by predicting the average values of CMAQ. Considering that running a one-year simulation in CMAQ takes approximately one month, utilizing average simulations can achieve significant cost savings.
 
 <br> Additionally, in surrogate target 3, there is an additional step of generating SMOKE data to be used as inputs. This is done through a generation algorithm to create average SMOKE data that achieves the target PM2.5 concentration. The purpose of this process is to find the optimal SMOKE configuration that can meet the desired PM2.5 target. By incorporating a generation algorithm, the research includes the generation of average SMOKE data as part of the surrogate target 3 process.
+
+# experiments
+
+* surrogate target 1
+<br> fot surrogate target 1 model, see experiment/smoke_cmaq_hourly.ipynb file.
+<br> The LSTM-CNN based model and conditional DCGAN based model were applied in the research, and the conditional DCGAN based model demonstrated superior performance.
+<br> for model code see experiment/nnmodules/unet Lstm2dUnet class and experiment/nnmodules/gan DCGAN_v2 class
+
+
