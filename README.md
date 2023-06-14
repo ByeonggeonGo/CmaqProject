@@ -28,5 +28,15 @@ In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
 * SMOKE: 4 months (1, 4, 7, 11) * 30 days * 24 hours * 82 (x-axis grid) * 67 (y-axis grid) * 17 (z-axis grid) * 61 (chemical species)
 * CMAQ: 4 months (1, 4, 7, 11) * 30 days * 24 hours * 82 (x-axis grid) * 67 (y-axis grid) * 1 (z-axis grid) * 15 (chemical species)
 
-<br>Among the 15 chemical species in CMAQ, only PM2.5 is used as the target.
+<br>Among the 15 chemicals in CMAQ, only PM2.5 is used as the target.
 <br>Since there are a total of 120 scenarios, the data described above is structured for each scenario individually.
+
+# Algorithms
+<br> The surrogate model created in this research serves two main purposes:
+
+
+* Original time-series data:
+<br> The surrogate model is designed to capture the characteristics and patterns of the original hourly spatio-temporal data. It aims to provide a computationally efficient alternative to the original data while preserving its essential information and temporal aspects.
+
+* yearly averaged data: 
+<br> The surrogate model is developed to generate year level averaged PM2.5 Concentrations. By considering different scenarios, the model can provide averaged PM2.5 concentrations that represent the air quality conditions under specific conditions or scenarios. This allows for the analysis and comparison of air quality across different scenarios without the need for extensive computations.
