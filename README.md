@@ -70,12 +70,11 @@ lstm-cnn based model
 
 conditional dcgan based model 
 
-** pix2pix dcgan generator structure
+<br>--pix2pix dcgan generator structure--
+<br>![hourlypix2pixgenerator](https://github.com/SlownSteadi/CmaqProject/assets/80737484/fb25af09-3aa0-44d3-b12b-f024e8446207)
 
-![hourlypix2pixgenerator](https://github.com/SlownSteadi/CmaqProject/assets/80737484/fb25af09-3aa0-44d3-b12b-f024e8446207)
-** pix2pix dcgan discriminator structure
-
-![hourlypix2discriminator](https://github.com/SlownSteadi/CmaqProject/assets/80737484/8188d114-0a6b-4f2a-a386-2e1b208ad87a)
+<br>--pix2pix dcgan discriminator structure--
+<br>![hourlypix2discriminator](https://github.com/SlownSteadi/CmaqProject/assets/80737484/8188d114-0a6b-4f2a-a386-2e1b208ad87a)
 
 
 * surrogate target 2
