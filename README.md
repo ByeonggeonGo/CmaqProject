@@ -5,6 +5,11 @@ In this study, we train deep learing based model for surrogate CMAQ(The Communit
 ![https://github.com/SlownSteadi/CmaqProject/issues/1#issue-1754400603](https://user-images.githubusercontent.com/80737484/245418958-276fce13-7372-4e14-a590-9a52631c081e.png)
 Image source:http://bioearth.wsu.edu/cmaq_model.html
 
+##### contributor:
+##### UI and backend engineering for analysis tool: https://github.com/JOJAESEONG
+##### model development and data engineering: url: https://github.com/yhlee230127
+##### GIS engineering: https://github.com/yhlee230127
+
 
 * Purpose
 <br> The objective of this study is to replace the computationally expensive CMAQ modeling with a deep learning-based surrogate model. 
@@ -100,13 +105,6 @@ In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
 <analysis tool image 1>
 ![dashboard_2](https://github.com/SlownSteadi/CmaqProject/assets/80737484/a23811ce-54fd-47aa-bc51-ff6e6300b9f1)
 <analysis tool image 2>
-
-<br>contribute:
-<br>UI and backend developer: ~!@#!@#! url
-<br>model development: url
-<br>GIS engineering:
-
-
 
 ## surrogate target 3
 
