@@ -59,7 +59,7 @@ In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
 * surrogate target 1
 
 <br> for surrogate target 1 model, see experiment/smoke_cmaq_hourly.ipynb file.
-<br> The LSTM-CNN based model and conditional DCGAN based model were applied in the research, and the conditional DCGAN based model demonstrated superior performance.
+<br> The LSTM-CNN based model and conditional DCGAN based model(pix2pix structure) were applied in the research, and the conditional DCGAN based model demonstrated superior performance.
 <br> for model code see experiment/nnmodules/unet Lstm2dUnet class and experiment/nnmodules/gan DCGAN_v2 class
 
 ![lstmbase](https://github.com/SlownSteadi/CmaqProject/assets/80737484/922cdf01-7c86-4c2a-83b2-b76d166e3659)
@@ -100,6 +100,11 @@ conditional dcgan based model
 <br>GIS engineering:
 
 
+
+* surrogate target 3
+
+<br> for surrogate target 3 model, see experiment/smoke_cmaq_model.ipynb file.
+<br> for model code see experiment/nnmodules/unet Unet_v2
 
 
 
