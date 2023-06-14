@@ -40,3 +40,5 @@ In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
 
 * yearly averaged data: 
 <br> The surrogate model is developed to generate year level averaged PM2.5 Concentrations. By considering different scenarios, the model can provide averaged PM2.5 concentrations that represent the air quality conditions under specific conditions or scenarios. This allows for the analysis and comparison of air quality across different scenarios without the need for extensive computations.
+
+![flowchart1](https://github.com/SlownSteadi/CmaqProject/assets/80737484/f1d10e9e-9528-42fe-acc5-32e648c65506)
