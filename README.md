@@ -13,3 +13,16 @@ Image source:http://bioearth.wsu.edu/cmaq_model.html
 <br>The structure involves using the values from the control matrix as inputs for the SMOKE model, and the resulting output is then fed into the CMAQ model for air quality modeling.
 <br>The control matrix is composed of 120 scenarios, which were used to model PM2.5 air quality for one year.
 In total, there are 120 sets of scenarios (Control matrix -> SMOKE -> CMAQ)
+
+* data shape
+<br>The original data is structured as netCDF files, and each individual scenario is composed as follows:
+
+<br>Control matrix: 119 (119 characteristics of pollutant emission sources, 17 regions * 7 emission sectors)
+
+<br>SMOKE: 4 months (1, 4, 7, 11) * 30 days * 24 hours * 82 (x-axis grid) * 67 (y-axis grid) * 17 (z-axis grid) * 61 (chemical species)
+
+<br>CMAQ: 4 months (1, 4, 7, 11) * 30 days * 24 hours * 82 (x-axis grid) * 67 (y-axis grid) * 1 (z-axis grid) * 15 (chemical species)
+
+<br>Among the 15 chemical species in CMAQ, only PM2.5 is used as the target.
+
+<br>Since there are a total of 120 scenarios, the data described above is structured for each scenario individually.
