@@ -222,8 +222,8 @@ $RECYCLE.BIN/
 
 
 
-/models
-/plots
+models/*
+plots/*
 
 
 #결과
