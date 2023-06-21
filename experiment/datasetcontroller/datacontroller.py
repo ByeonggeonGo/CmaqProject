@@ -12,6 +12,9 @@ import rasterio
 from rasterio.plot import show
 import matplotlib
 import tensorflow as tf
+import matplotlib.colors as mcl
+import matplotlib as mpl
+import matplotlib.cm as cm
 
 class DataController():
     def __init__(self, data_path: str,):
@@ -183,7 +186,7 @@ class DataController():
             smoke_indexed_grid_point.to_crs(5179).plot(ax = sub_ax,markersize = 1,column = chem)
     
 
-    def get_ctp_based_pred_map(self, pred_arr):
+    def get_ctp_based_pred_map(self, pred_arr, vmin_val,vmax_val, title_name,ax):
       
 
         data = pred_arr 
@@ -207,19 +210,36 @@ class DataController():
         
     
         with rasterio.open(dst_filename) as src:
-            fig, ax = plt.subplots(figsize=(6, 6))
+
+            # ## 커스터 마이징 컬러맵
+            # h = 2
+            # v = 1
+            # colors = [
+            #     mcl.hsv_to_rgb((h/360,0,v)),
+            #     mcl.hsv_to_rgb((h/360,0.1,0.2)),s
+            #     mcl.hsv_to_rgb((h/360,0.8,0.4)),
+            #     mcl.hsv_to_rgb((h/360,1,0.9))
+            # ]
+            # cmap2 = mcl.LinearSegmentedColormap.from_list('my_cmap', colors, gamma=2)
+            # norm = mpl.colors.Normalize(vmin=vmin_val, vmax=vmax_val)
+            # colormapping2 = cm.ScalarMappable(norm=norm, cmap=cmap2)
+
+            # fig, ax = plt.subplots(figsize=(6, 6))
+            # plt.title(title_name)
+            ax.set_title(title_name)
             data = src.read(1)
             # 컬러바
-            image = ax.imshow(data, vmin=0, vmax=75)
+            image = ax.imshow(data, vmin=vmin_val, vmax=vmax_val, cmap='cividis')
             cbar = plt.colorbar(image, ax=ax,)
+            # cbar = plt.colorbar(colormapping2, ax=ax,)
 
             # # 진짜 그리기
-            image = show(src, ax=ax, vmin=0, vmax=75)
-            self._ctp_rvn_gpd_cutting.plot(ax=ax, color='none', edgecolor='black', linewidth=0.2)
+            image = show(src, ax=ax, vmin=vmin_val, vmax=vmax_val, cmap='cividis')
+            self._ctp_rvn_gpd_cutting.plot(ax=ax, color='none', edgecolor='grey', linewidth=0.2)
            
 
 
-        return fig
+        # return fig
     
     def _bytes_feature(self,value):
         if isinstance(value, type(tf.constant(0))):

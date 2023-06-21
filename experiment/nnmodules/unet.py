@@ -92,14 +92,14 @@ class Unet_v2(tf.keras.Model):
         self.input_resize_layer = tf.keras.layers.Resizing(
             128,
             128,
-            interpolation='bilinear',
+            interpolation='lanczos3',
             crop_to_aspect_ratio=False,
         )
 
         self.output_resize_layer = tf.keras.layers.Resizing(
             82,
             67,
-            interpolation='bilinear',
+            interpolation='lanczos3',
             crop_to_aspect_ratio=False,
         )
 
@@ -206,7 +206,85 @@ class Unet_v2(tf.keras.Model):
         x = self.output_resize_layer(x)
         return x
     
+class Unet_v2_1(tf.keras.Model): 
+    def __init__(self,): 
+        super(Unet_v2_1, self).__init__()
+        self.lose_mse = tf.keras.losses.MeanSquaredError()
 
+        self.input_resize_layer = tf.keras.layers.Resizing(
+            128,
+            128,
+            interpolation='lanczos3',
+            crop_to_aspect_ratio=False,
+        )
+
+        self.output_resize_layer = tf.keras.layers.Resizing(
+            82,
+            67,
+            interpolation='lanczos3',
+            crop_to_aspect_ratio=False,
+        )
+
+        self.enc1_1 = CBR2d(out_channels = 64) 
+        self.enc1_2 = CBR2d(out_channels=64)
+            
+        self.pool1 = tf.keras.layers.MaxPool2D(pool_size=(2,2), )
+        
+        self.enc2_1 = CBR2d(out_channels=128)
+        self.enc2_2 = CBR2d(out_channels=128)
+        
+        self.pool2 = tf.keras.layers.MaxPool2D(pool_size=(2,2), )
+        
+        self.enc3_1 = CBR2d(out_channels=256)
+        self.dec3_1 = CBR2d(out_channels=128)
+
+        self.unpool2 = tf.keras.layers.Conv2DTranspose(filters=128, kernel_size=2,strides=(2, 2))
+
+        self.dec2_2 = CBR2d(out_channels=128)
+        self.dec2_1 = CBR2d(out_channels=64)
+
+        self.unpool1 = tf.keras.layers.Conv2DTranspose(filters=64, kernel_size=2,strides=(2, 2))
+
+        self.dec1_2 = CBR2d(out_channels=64)
+        self.dec1_1 = CBR2d(out_channels=64)
+
+        self.outlayer = tf.keras.layers.Conv2D(1,kernel_size = 1)
+              
+    def call(self, input): 
+
+        input = self.input_resize_layer(input)
+      
+        enc1_1 = self.enc1_1(input)
+        enc1_2 = self.enc1_2(enc1_1)
+        
+        pool1 = self.pool1(enc1_2)
+
+        enc2_1 = self.enc2_1(pool1)
+        enc2_2 = self.enc2_2(enc2_1)
+        
+        pool2= self.pool2(enc2_2)
+  
+        enc3_1 = self.enc3_1(pool2)
+        
+        dec3_1 = self.dec3_1(enc3_1)
+        
+        unpool2 = self.unpool2(dec3_1)
+        
+        cat2 = tf.keras.layers.Concatenate(axis=3)([unpool2, enc2_2]) # dim = [0:batch, 1:channel, 2:height, 3:width]
+        dec2_2 = self.dec2_2(cat2)
+        dec2_1 = self.dec2_1(dec2_2)
+        
+        unpool1 = self.unpool1(dec2_1)
+        
+        cat1 = tf.keras.layers.Concatenate(axis=3)([unpool1, enc1_2]) # dim = [0:batch, 1:channel, 2:height, 3:width]
+        dec1_2 = self.dec1_2(cat1)
+        dec1_1 = self.dec1_1(dec1_2)
+        
+        x = self.outlayer(dec1_1)
+
+        x = self.output_resize_layer(x)
+        return x
+    
     
 class Unet_v3(tf.keras.Model): 
     def __init__(self,base_map): 
